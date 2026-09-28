@@ -1,0 +1,24 @@
+{% extends ' pages/base.html'%}
+{% load static %}
+{% block title %} Cart Items {% endblock title %}
+{% block content %}
+
+<div class="container">
+
+    {% for p in cart_items%}
+    <div class="row">
+        <div class="col-md-6 left-section">
+            <img src="" alt="">
+        </div>
+        <div class="col-md-6" right-section>
+            <h5 class="card-title">{{ p.product.name }}</h5>
+            <p>{{p.product.desc}}</p>
+
+            <p>{{ p.product.price }}</p>
+            <p>{{p.quantity }}</p>
+
+            <button class="bg-success btn-md">Buy Now</button>
+        </div>
+    </div>
+</div>
+{% endblock content %}
